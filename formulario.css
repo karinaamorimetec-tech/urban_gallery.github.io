@@ -1,0 +1,83 @@
+form h1 
+{
+    color: rgba(7, 3, 0, 0.945);
+    text-align: center;
+    font-family: 'Urban Vibes';
+    font-size: 50px;
+    font-weight: normal;
+    text-shadow: -10px -10px 0 #ff5b19, -5px 5px 0 #ff5b19, 10px -10px 0 #ff5b19, 5px -5px 0 #ff5b19
+    
+
+    
+}
+body
+{
+    text-align: center;
+    color: rgb(245, 102, 6); 
+    font-family: 'Roashe';
+    background-image: url(orange.png);
+        
+}
+campo-form 
+{
+    display: 50px;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+campo-form label 
+{
+    width: 150px;
+    text-align: center;
+    margin-right: 15px;
+}
+legend
+{
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    font-family: 'Urban Vibes';
+}
+
+div
+{
+    font-weight: bold;
+    
+}
+    
+
+fieldset
+{
+    border-radius: 500px 150px 500px 150px;
+    border-radius: none;
+    border-width: 5px;
+    background-image: url(ti-white.webp);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+@font-face {
+    font-family: 'Urban Vibes';
+    src: url('./fonte/URBAN\ VIBES.ttf')
+}
+
+@font-face {
+    font-family: 'Fragmentcore';
+    src: url('./fonte/Fragmentcore.otf')
+
+}
+@font-face {
+    font-family: 'Roashe';
+    src: url('./fonte/Roashe.ttf')
+}
+@font-face {
+    font-family: 'secrcode';
+    src: url('./fonte/secrcode.ttf')
+}
+@font-face {
+    font-family: 'Consola1';
+    src: url('./fonte/Consola1.ttf')
+}

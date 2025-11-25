@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+
+    <!-- ================== HEADER ================== -->
+    <header>
+        <div class="container-header">
+
+            <img src="Logotipo1.png" alt="Logo" class="logo">
+
+            <div class="titulo-menu">
+                <!-- Botão do menu hamburguer -->
+                <div class="menu-btn" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav id="menu-dropdown">
+                    <ul>
+                        <li><a href="#galeria">Galeria</a></li>
+
+                        <!-- DROPDOWN DE ARTISTAS -->
+                        <li class="dropdown">
+                            <a href="#artista1">Artistas ▾</a>
+                            <ul class="submenu">
+                                <li><a href="#artista1">Criola</a></li>
+                                <li><a href="#artista2">Robinho Santana</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#reserva">Reserva</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#" id="abrirCadastro">Cadastre-se</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Galeria -->
+    <section id="galeria">
+        <h1>Galeria de Fotos</h1>
+
+        <div class="galeria-container">
+            <p class="ante" onclick="Anterior()">&#60;</p>
+            <img src="./Imagem1_Artista_Criola.webp" name="imagem" alt="Galeria de imagens"/>
+            <p class="prox" onclick="Proximo()">&#62;</p>
+        </div>
+    </section>
+
+    <!-- Script do Carrossel -->
+    <script>
+        var cont = 1;
+        var img1 = "./Imagem1_Artista_Criola.webp";
+        var img2 = "./Imagem2_Artista_Criola.webp";
+        var img3 = "./Imagem3_Artista_Criola.webp";
+        var img4 = "./Imagem1_Artista_Robinho.webp";
+        var img5 = "./Imagem2_Artista_Robinho.webp";
+        var img6 = "./Imagem3_Artista_Robinho.webp";
+
+        var repete = setInterval("Carrossel()", 2000);
+
+        function Carrossel() {
+            document.images["imagem"].src = eval("img" + cont);
+            cont = cont < 6 ? cont + 1 : 1;
+        }
+
+        function Anterior() {
+            clearInterval(repete);
+            cont = cont === 1 ? 6 : cont - 1;
+            document.images["imagem"].src = eval("img" + cont);
+            repete = setInterval("Carrossel()", 2000);
+        }
+
+        function Proximo() {
+            clearInterval(repete);
+            cont = cont < 6 ? cont + 1 : 1;
+            document.images["imagem"].src = eval("img" + cont);
+            repete = setInterval("Carrossel()", 2000);
+        }
+    </script>
+
+    <!-- Primeira Artista -->
+    <section id="artista1" class="artista1">
+        <h1>Artistas</h1>
+        <h2>Criola</h2>
+        <div class="conteudo">
+            <img src="./Artista1-Criola.webp" alt="Artista1">
+            <p>
+                Criola é uma artista visual nascida em Belo Horizonte (MG) em 1990. 
+                Sua arte é marcada pela valorização da ancestralidade, da espiritualidade 
+                e da conexão com a natureza. Formada em Moda pela UFMG, ela combina 
+                texturas, padronagens e grafismos inspirados em matrizes afro-brasileiras, 
+                destacando a força e as subjetividades da mulher preta. 
+                Suas obras trazem cores vibrantes e formas geométricas sagradas 
+                que refletem suas vivências e identidade como artista afrodiaspórica. 
+                Desde 2012, realiza murais de grande porte no Brasil e em países como 
+                França, Bielorrússia e Estados Unidos. Atualmente, vive e trabalha 
+                em Belo Horizonte.
+            </p>
+        </div>
+    </section>
+
+    <!-- Segundo Artista -->
+    <section class="artista2">
+        <section id="artista2" class="artista2"></section>
+        <h2>Robinho Santana</h2>
+        <div class="conteudo">
+            <img src="./Artista2-Robinho Santana.webp" alt="Artista2">
+            <p>
+                Robinho Santana, artista de Diadema (SP), cria pinturas figurativas que destacam 
+                pessoas negras como protagonistas. Formado em Design pela Anhembi Morumbi, 
+                também utiliza seus conhecimentos em fotografia e modelagem 3D para compor obras 
+                com cores intensas e temas ligados à ancestralidade afro-brasileira. 
+                Suas produções já foram exibidas em espaços como a Pinacoteca de 
+                São Bernardo (SP) e no Athens Digital Week, na Grécia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <h1>Sobre Nós</h1>
+        <p>
+            “Nosso propósito é fazer do cotidiano uma galeria viva, onde cada gesto, cada cor e cada sombra revelam histórias escondidas. 
+            Transformamos a cidade em tela, capturando instantes que passam silenciosos pelos olhos comuns, mas que vibram em significado
+            para quem se permite sentir. Cada obra nasce do encontro entre movimento e emoção — fragmentos urbanos que se tornam poesia visual. 
+            É na textura das ruas, na luz que dança nos muros e no pulsar das pessoas que buscamos a verdadeira arte: aquela que existe antes de ser percebida.”
+        </p>
+    </section>
+
+    <!-- Contato -->
+    <section id="reserva" class="reserva">
+        <h1>Faça sua Reserva</h1>
+        <form>
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <input type="date" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="contato">
+            <p>Rua Central, 45 - Cidade</p>
+            <p>&copy; 2025 Urban Gallery — Todos os direitos reservados</p>
+            <div class="icones">
+                <a href="https://www.instagram.com/u.rbangallery?" target="_blank">
+                    <img src="./instagram.png" alt="Instagram">
+                </a>
+                <a href="https://wa.me/55999999999" target="_blank">
+                    <img src="./whatsapp.png" alt="Whatsapp">
+                </a>
+                <a href="https://maps.google.com/?q=Rua+Central+45" target="_blank">
+                    <img src="./google-maps.png" alt="Google Maps">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =============== MODAL DE CADASTRO =============== -->
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <!-- FORMULÁRIO COMPLETO -->
+            <iframe src="./formulario.html" class="iframe-form"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modal-cadastro").classList.add("show");
+        }
+
+        function fecharModal() {
+            document.getElementById("modal-cadastro").classList.remove("show");
+        }
+
+        /* Evento correto */
+        document.getElementById("abrirCadastro").addEventListener("click", function(event) {
+            event.preventDefault();
+            abrirModal();
+        });
+
+        // controla o menu hamburguer
+        function toggleMenu() {
+            const menu = document.getElementById("menu-dropdown");
+            const btn = document.querySelector(".menu-btn");
+
+            menu.classList.toggle("open");
+            btn.classList.toggle("open");
+        }
+
+        // ABRIR SUBMENU SEM BLOQUEAR O CLIQUE NO LINK "ARTISTAS"
+        document.querySelector(".dropdown > a").addEventListener("click", function (e) {
+            if (window.innerWidth <= 820) {
+                const dropdown = document.querySelector(".dropdown");
+                // abre somente o submenu
+                dropdown.classList.toggle("open");
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+body 
+{
+    font-weight: bold;
+    font-family: Arial;
+    line-height: 1.6;
+    background-color: hsl(30, 33%, 99%);
+    color: black;
+    margin: 0;
+}
+
+
+html 
+{
+    scroll-behavior: smooth;
+}
+
+/* Remove o espaço padrão */
+body 
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+header 
+{
+    background-color: rgba(245, 100, 2, 0.95);
+    backdrop-filter: blur(6px);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+}
+
+.container-header 
+{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Logo */
+.logo 
+{
+    width: 100px;
+}
+
+/* Título + Menu */
+.titulo-menu 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-menu h1 
+{
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.25); 
+}
+
+/*        BOTÃO HAMBURGUER        */
+.menu-btn 
+{
+    display: none;              /* Esconde o botão no desktop (aparece só no mobile) */
+    flex-direction: column;     /* Organiza as três barras em coluna (uma embaixo da outra) */
+    gap: 6px;                   /* Espaço entre cada barra do ícone */
+    cursor: pointer;            /* Mostra a mãozinha ao passar o mouse */
+    margin-top: 12px;           /* Dá uma distância do topo, ajustando a posição */
+}
+
+.menu-btn span 
+{
+    width: 30px;                /* Largura da barra do menu hambúrguer */
+    height: 4px;                /* Altura da barra (espessura) */
+    background: #fff;           /* Cor branca das barras */
+    border-radius: 4px;         /* Deixa as bordas arredondadas */
+    transition: 0.3s;           /* Suaviza a animação quando o botão se transforma */
+}
+
+/*ANIMAÇÃO DO ÍCONE AO ABRIR (transforma em X) */
+.menu-btn.open span:nth-child(1) 
+{
+    transform: translateY(10px) rotate(45deg);  /* Desce a barra e gira 45°, virando parte do X */
+}
+
+
+.menu-btn.open span:nth-child(2) 
+{
+    opacity: 0;  /* Some no modo aberto (a barra do meio desaparece) */
+}
+
+.menu-btn.open span:nth-child(3) 
+{
+    transform: translateY(-10px) rotate(-45deg);      /* Sobe a barra e gira -45°, completando o X */
+}
+
+/*           MENU DESKTOP          */
+nav ul 
+{
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a 
+{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover 
+{
+    color: #ffd8b0;
+    text-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+/* Empurra conteúdo */
+section, footer 
+{
+    padding-top: 180px;
+}
+
+/*          GALERIA                */
+h1 
+{
+    text-align: center;
+    font-size: 60px;
+    margin-top: -50px;
+    color: #250101;
+}
+
+.galeria-container 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: -55px;
+}
+
+
+
+.galeria-container img 
+{
+    width: 800px;      /* mesma largura */
+    height: 500px;     /* mesma altura */
+    object-fit: cover; /* corta proporcional para padronizar */
+    border-radius: 10px;
+    border: 5px solid #ff6600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+.ante, .prox 
+{
+    font-size: 60px;
+    color: #ff6600;
+    cursor: pointer; /* trocar */
+    user-select: none;
+    font-weight: bold;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.ante:hover, .prox:hover 
+{
+    color: #ff6600;
+    transform: scale(1.2);
+}
+
+/*            ARTISTAS             */
+#artista1 h1 
+{
+    margin-top: 10px;
+}
+
+.artista1 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    margin-top: -100px;
+}
+
+#artista2 
+{
+    margin-top: -250px;
+}
+
+.artista2 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    margin-top: -30px;
+}
+
+.artista1 h2 
+{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: -40px;
+}
+
+.artista2 h2 
+{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: -80px;
+}
+
+.conteudo 
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+}
+
+.conteudo img 
+{
+    border: 5px solid #ff6600;
+    border-radius: 10px;
+    width: 300px;
+    margin-top: -10px;
+}
+
+.conteudo p 
+{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/*          SUBMENU GLOBAL         */
+.submenu 
+{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    width: auto;
+    min-width: 180px;
+    max-width: 260px;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: 0.25s ease-in-out;
+}
+
+.dropdown:hover .submenu 
+{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    display: block;
+}
+
+.submenu li 
+{
+    display: block;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.submenu li a 
+{
+    padding: 10px 15px;
+    display: block;
+    color: #444;
+    text-decoration: none;
+}
+
+/*             SOBRE               */
+.sobre 
+{
+    margin-top: -120px;
+}
+
+.sobre p 
+{
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 20px;
+}
+
+/*             Reserva             */
+#reserva
+{
+    scroll-margin-top: 200px;
+    padding: 80px;
+}
+
+.reserva form 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.reserva input,
+.reserva button 
+{
+    padding: 12px;
+    font-size: 18px;
+    width: 300px;
+}
+
+button 
+{
+    background: #f56402;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+button:hover 
+{
+    background: #c44c00;
+}
+
+/*             RODAPÉ              */
+footer 
+{
+    width: 100%;
+    background-color: #f56402;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.contato 
+{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+footer p 
+{
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    align-items: center;
+}
+
+.icones 
+{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.icones img 
+{
+    width: 40px;
+    transition: 0.3s;
+}
+
+.icones img:hover 
+{
+    transform: scale(1.15);
+}
+
+/*        RESPONSIVO 820px         */
+@media (max-width: 820px) 
+{
+    .menu-btn 
+    {
+        display: flex;
+    }
+
+    #menu-dropdown 
+    {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        width: 100%;
+    }
+
+    #menu-dropdown.open 
+    {
+        max-height: 300px;
+    }
+
+    nav ul 
+    {
+        flex-direction: column;
+        background: rgba(245, 100, 2, 0.95);
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+        gap: 20px;
+    }
+
+    nav ul li a 
+    {
+        font-size: 18px;
+        color: white;
+        text-align: center;
+    }
+
+    .galeria-container 
+    {
+        flex-direction: column;
+        gap: 5px; /* diminui o espaço vertical */
+    }
+
+    .galeria-container img 
+    {
+        width: 90%;
+        height: 350px;
+    }
+
+    .ante, .prox 
+    {
+        font-size: 45px; /* setas menores */
+        margin: 0;  /* remove margens extras */
+    }
+
+    .conteudo 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conteudo img 
+    {
+        width: 80%;
+    }
+
+    /* submenu no mobile */
+.submenu 
+{
+    width: 100%;
+    position: static;
+    background: rgba(245, 100, 2, 0.95);
+    padding: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.dropdown.open .submenu 
+{
+    max-height: 300px;
+}
+
+.submenu li a 
+{
+    color: white;
+    text-align: center;
+    padding: 14px;
+    display: block;
+    white-space: normal;
+    font-size: 16px;
+
+}
+
+}
+
+/*        RESPONSIVO 480px         */
+@media (max-width: 480px) 
+{
+
+    .galeria-container 
+    {
+        gap: 0; /* encosta mais ainda */
+    }
+
+    .galeria-container img 
+    {
+        width: 95%;
+        height: 260px;
+    }
+
+    .ante, .prox 
+    {
+        font-size: 35px; /* setas ainda menores */
+    }
+
+    h1 
+    {
+        font-size: 35px;
+    }
+
+    .conteudo p 
+    {
+        font-size: 16px;
+    }
+
+    footer p 
+    {
+        font-size: 16px;
+    }
+
+    .icones img 
+    {
+        width: 35px;
+    }
+
+    .submenu 
+    {
+        position: static;
+        background: rgba(245, 100, 2, 0.95);
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .dropdown.open .submenu 
+    {
+        max-height: 300px;
+    }
+
+    .submenu li a 
+    {
+        color: white;
+        padding: 12px 25px;
+    }
+    
+    #reserva
+    {
+        scroll-margin-top: 250px ;
+    }
+
+}
+
+/*       DROPDOWN - DESKTOP        */
+.dropdown 
+{
+    position: relative;
+}
+
+.dropdown > a 
+{
+    cursor: pointer;
+}
+
+.submenu 
+{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: 0.25s ease-in-out;
+}
+
+.submenu li a 
+{
+    padding: 10px 15px;
+    color: #444;
+    font-size: 18px;
+}
+
+.submenu li a:hover 
+{
+    background-color: #f56402;
+    color: white;
+}
+
+.dropdown:hover .submenu 
+{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+/*               MODAL             */
+.modal 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+.modal.show 
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content 
+{
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    padding: 0;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fechar 
+{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 35px;
+    color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.iframe-form 
+{
+    width: 100%;
+    height: 95vh;
+    border: none;
+}

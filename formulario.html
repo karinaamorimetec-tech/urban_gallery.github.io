@@ -1,0 +1,93 @@
+<html lang="pt-br">
+<head>
+   <meta charset= "UTF-8">
+   <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+   <title> Formulario </title>
+   <link rel="stylesheet" type="text/css" href="formulario.css"/>
+</head>
+
+<Body>
+    <form action="https://formsubmit.co/urban-gallery@hotmail.com" method="post" enctype="text/plain"> 
+		<h1> CADASTRO DE ARTISTA <br> URBAN GALLERY </h1>
+		<hr/>
+
+    <fieldset>
+        <h2>
+            <legend>Dados Pessoais</legend>
+        </h2>
+    <div class="campo-form">
+        <label for="Nome Artístico">Nome Artístico:</label>
+        <input type = "text" id= "Nome Artístico" name = "Nome Artístico" required />
+    </div>
+        
+    <div class="campo-form">
+        <label for="Endereço">Endereço:</label>
+        <input type = "text" id= "Endereço" name = "Endereço" required />
+    </div>    
+
+    <div class="campo-form">
+        <label for="Telefone para contato">Telefone para contato:</label>
+        <input type = "text" id= "Telefone para contato" name = "Telefone para contato" required />
+    </div>
+
+    <div class="campo-form">
+        <label for = "Nascimento">Data Nascimento:</label>
+        <input type = "date" id= "nascimento" name = "nascimento" required />
+    </div>
+    <div class="campo-form">
+        <label for="txtsexo">Sexo:</label>
+		<input type="radio" name="txtsexo" id="txtsexof" value="f" checked/>Feminino
+		<input type="radio" name="txtsexo" id="txtsexom" value="m"/>Masculino
+		<input type="radio" name="txtsexo" id="txtsexoi" value="x"/>Prefiro não responder
+    </div>
+
+    <div class="campo-form">
+		<label for="txtemai">e-Mail:</label>
+		<input type="email" name="txtemai" id="txtemai" placeholder="Obrigatório" maxlength=40 required/>&nbsp;&nbsp;
+    </div>
+    <div class="campo-form">
+        <label for="txtsenh">Senha:</label>
+        <input type="password" name="txtsenh" id="txtsenh" placeholder="Obrigatório" maxlength=10 required/>&nbsp;&nbsp;
+	</div>
+    </fieldset>
+
+    <fieldset>
+		<h2>
+            <legend>Experiência em Artes</legend>
+        </h2>
+        <div class="cursos">
+            <label for="txtcur" class="titcur">Cursos que já concluiu:</label><br />
+            <input type="checkbox" name="txtadm" id="txtadm" />Workshop em Fotografia<br />
+            <input type="checkbox" name="txtdes" id="txtdes" />Estudo em Artes Visuais<br />
+            <input type="checkbox" name="txtmec" id="txtmec" />Fotografia<br />
+            <input type="checkbox" name="txtmec" id="txtmec" />Participação em Exposição de Arte 
+            <div class="outras-exp"> 
+            <label for="outras_experiencias">Outras Experiencias, Formações ou Prêmios Relevantes (campo livre):</label><br />
+            <textarea name=" txt_outras_exp" id="txt_outras_exp" cols=" 30 " rows="5">
+            </textarea>
+            </div>
+
+             </div>
+        
+
+    </fieldset>   
+
+    <fieldset>
+        <h2>
+            <legend>Comentário</legend>
+        </h2>
+        <div class="coment">
+				<label for="txtcom">Resuma, em poucas palavras, suas principais habilidades:</label><br/>
+				<textarea name="txtcom" id="txtcom" cols="30" rows="5">
+				</textarea>
+	    </div>
+		<div class="botoes">
+				<input type="submit" value="Enviar"/>
+				<input type="reset" value="Limpar"/>
+		</div>
+    </fieldset>
+    
+        </form>
+
+    </Body>
+    </html>
